@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRANG CHỦ</title>
+
+    <!-- tailwind css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="static/index.css" />
+    <link rel="stylesheet" href="static/home.page.css" />
+  </head>
+  <body>
+    <div>
+      <!-- background -->
+      <img
+        class="w-full height-full-custom"
+        alt="background image"
+        loading="lazy"
+        src="background/background.webp"
+      />
+
+      <!-- header -->
+      <div
+        class="header-menu w-full bg-[#000] absolute z-1 top-0 h-28 text-center items-center grid select-none"
+      >
+        <div
+          class="w-full items-center header-logo-custom text-center inline text-left"
+        >
+          <div
+            class="w-full items-center header-logo-custom text-center inline"
+          >
+            <div class="items-center w-2/3 inline-flex h-full">
+              <div class="grid grid-cols-5 items-center w-full">
+                <div class="col-span-4 text-left">
+                  <div class="items-center w-4/5 inline-flex h-full">
+                    <div class="mr-2">
+                      <a href="#">
+                        <img
+                          src="icons/volkswagen-logo.png"
+                          alt="logo.png"
+                          width="60"
+                        />
+                      </a>
+                    </div>
+
+                    <div class="text-left w-4/5">
+                      <h2 class="font-bold text-xl">VOLKSWAGEN MIỀN TRUNG</h2>
+                      <div class="menu pt-2">
+                        <a
+                          href="#"
+                          class="item pr-5 text-sm hover:text-red-400 transition"
+                          >TRANG CHỦ</a
+                        >
+                        <a
+                          href="#"
+                          class="item pr-5 text-sm hover:text-red-400 transition"
+                          >SẢN PHẨM</a
+                        >
+                        <a
+                          href="#"
+                          class="item pr-5 text-sm hover:text-red-400 transition"
+                          >KHUYẾN MÃI</a
+                        >
+                        <a
+                          href="#"
+                          class="item pr-5 text-sm hover:text-red-400 transition"
+                          >DỊCH VỤ</a
+                        >
+                        <a
+                          href="#"
+                          class="item pr-5 text-sm hover:text-red-400 transition"
+                          >LIÊN HỆ</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-span-1 text-right flex mb-10 text-red-400">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 mr-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  <span
+                    >Hotline: <a href="tel:+84905571011">0905571011</a></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-links absolute z-1 bottom-0 h-10 flex ml-10">
+        <a href="https://www.facebook.com/hoangthien.nguyenho" title="facebook social">
+          <div class="link-to-social mr-5">
+            <img src="icons/fb.svg" alt="social-icon.png" class="invert" />
+          </div>
+        </a>
+        <a href="https://m.me/hoangthien.nguyenho" title="messenger social">
+          <div class="link-to-social mr-5">
+            <img
+              src="icons/messenger.svg"
+              alt="social-icon.png"
+              class="invert"
+            />
+          </div>
+        </a>
+        <a href="tel:+84905571011" title="zalo social">
+          <div class="link-to-social">
+            <img src="icons/zalo.svg" alt="social-icon.png" class="invert" width="35"/>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="columns-3 p-20 pt-5" id="grid"></div>
+
+    <!-- modal when on click the image -->
+    <div
+      class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog relative pointer-events-none width-custom-dialog"
+      >
+        <div
+          class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
+        >
+          <div
+            class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md"
+          >
+            <!-- title -->
+            <h5
+              class="text-xl font-medium leading-normal text-gray-800"
+              id="exampleModalLabel"
+            ></h5>
+            <button
+              type="button"
+              id="close-button"
+              class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body relative p-4">
+            <div class="grid grid-cols-6">
+              <!-- hình ảnh về xe -->
+              <div class="flex justify-center col-span-3">
+                <div
+                  class="rounded-lg w-full shadow-lg bg-white mr-2"
+                  style="height: fit-content"
+                  id="image-car"
+                >
+                  <!-- <a href="#!">
+                    <img
+                      id="image-car"
+                      class="rounded-lg object-cover h-full w-full"
+                      src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                      alt=""
+                    />
+                  </a> -->
+                </div>
+              </div>
+
+              <div class="col-span-3">
+                <!-- Step 1: form over here -->
+                <h3 class="text-gray-400 font-bold">Bước 1: Chọn loại xe</h3>
+                <div class="ml-2 col-span-3" id="car-info"></div>
+
+                <!-- Step 2: fill information to us -->
+                <div class="mt-10">
+                  <h3 class="text-gray-400 font-bold">
+                    Bước 2: Điền thông tin
+                  </h3>
+                  <div class="md:flex md:items-center mb-6">
+                    <input
+                      class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                      id="inline-full-name"
+                      type="text"
+                      placeholder="Nguyễn Văn A"
+                    />
+                  </div>
+                </div>
+
+                <div class="md:flex md:items-center mb-6">
+                  <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    id="inline-email"
+                    type="text"
+                    placeholder="admin@gmail.com"
+                  />
+                </div>
+
+                <div class="md:flex md:items-center mb-6">
+                  <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    id="inline-number"
+                    type="text"
+                    placeholder="0905xxxxxx"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md"
+          >
+            <button
+              type="button"
+              class="w-1/5 px-6 py-2.5 bg-gray-200 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg transition duration-150 ease-in-out"
+              data-bs-dismiss="modal"
+            >
+              Đóng
+            </button>
+            <button
+              type="button"
+              class="w-1/5 px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out ml-1"
+              onclick="addXLSX()"
+            >
+              Yêu cầu báo giá
+            </button>
+            <button
+              type="button"
+              class="w-1/5 px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1"
+              onclick="addXLSX()"
+            >
+              Đăng ký lái thử
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="initialize.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      function addXLSX() {
+        let inlineFullNameValue =
+          document.getElementById("inline-full-name").value + "";
+        let inlineEmailValue =
+          document.getElementById("inline-email").value + "";
+        let inlineNumberValue =
+          document.getElementById("inline-number").value + "";
+
+        let isPass = true;
+        // validate
+        if (!(inlineFullNameValue.length > 0)) {
+          isPass = false;
+          alert("Tên không được rỗng");
+        } else if (
+          !inlineEmailValue.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)
+        ) {
+          isPass = false;
+          alert("Email không hợp lệ");
+        } else if (!inlineNumberValue.match(/(0[3|5|7|8|9])+([0-9]{8})\b/g)) {
+          isPass = false;
+          alert("Số điện không hợp lệ");
+        }
+
+        if (isPass) {
+          axios
+            .post("https://be-hoang-thien.herokuapp.com/test", {
+              fullname: inlineFullNameValue,
+              email: inlineEmailValue,
+              number: inlineNumberValue,
+            })
+            .then(function (response) {
+              alert("Ghi thông tin thành công");
+              document.getElementById("close-button").click();
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }
+      }
+    </script>
+  </body>
+</html>

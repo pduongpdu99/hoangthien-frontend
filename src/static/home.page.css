@@ -1,0 +1,16 @@
+.height-full-custom {
+  height: 100vh;
+}
+
+.header-logo-custom {
+  z-index: 1;
+  background: white;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.width-custom-dialog {
+  max-width: 66.6666667%;
+}
